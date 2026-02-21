@@ -192,7 +192,7 @@ function createPermalink(text: string, options: QrOptions, maskOptions: MaskOpti
   params.set('mo', String(maskOptions.opacityPercent));
 
   const query = params.toString();
-  return `${window.location.origin}${window.location.pathname}${query ? `?${query}` : ''}`;
+  return query ? `?${query}` : window.location.pathname;
 }
 
 export default function App() {
